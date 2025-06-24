@@ -1,55 +1,126 @@
+import React from "react";
 
-import { Button } from "../../../../components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "../../../../components/ui/navigation-menu";
-
+const navItems = [
+  { label: "Platform" },
+  { label: "Solutions" },
+  { label: "Developers" },
+  { label: "Resources" },
+  { label: "Pricing" },
+];
 
 export const NavigationBarSection = (): JSX.Element => {
-  // Navigation menu items data
-  const navItems = [
-    { label: "Platform"},
-    { label: "Solutions"},
-    { label: "Developers"},
-    { label: "Resources"},
-    { label: "Pricing" },
-  ];
-
   return (
-    <header className="flex w-full items-center justify-between px-16 py-4 bg-grayscaledark-01">
+    <header
+      style={{
+        background: "#0A0914",
+        boxShadow: "0 2px 24px 0 rgba(104,82,214,0.04)",
+        padding: "20px 24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+      }}
+    >
       <img
-        className="h-5 w-[128.81px]"
+        style={{
+          height: "22px",
+          width: "140px",
+        }}
         alt="Logo"
         src="https://c.animaapp.com/mc99rq32MYYUAu/img/logo-1.svg"
       />
 
-      <NavigationMenu>
-        <NavigationMenuList className="flex gap-8">
+      <nav style={{ display: "none", gap: "40px" }} className="md:flex">
+        <ul style={{ display: "flex", gap: "40px", margin: 0, padding: 0, listStyle: "none" }}>
           {navItems.map((item, index) => (
-            <NavigationMenuItem key={index}>
-              <NavigationMenuLink className="flex items-center gap-1 opacity-[0.84] font-sm-regular font-[number:var(--sm-regular-font-weight)] text-grayscaledark-12 text-[length:var(--sm-regular-font-size)] tracking-[var(--sm-regular-letter-spacing)] leading-[var(--sm-regular-line-height)] whitespace-nowrap [font-style:var(--sm-regular-font-style)]">
+            <li key={index}>
+              <a
+                href="#"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  lineHeight: "22px",
+                  letterSpacing: "0.08px",
+                  color: "#FAFAFF",
+                  opacity: 0.9,
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                className="hover:text-[#6852D6] focus:text-[#6852D6]"
+              >
                 {item.label}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+              </a>
+            </li>
           ))}
-        </NavigationMenuList>
-      </NavigationMenu>
+        </ul>
+      </nav>
 
-      <div className="flex items-center gap-4">
-        <Button
-          variant="ghost"
-          className="opacity-[0.84] px-3 py-2 font-sm-regular font-[number:var(--sm-regular-font-weight)] text-grayscaledark-12 text-[length:var(--sm-regular-font-size)] tracking-[var(--sm-regular-letter-spacing)] leading-[var(--sm-regular-line-height)] whitespace-nowrap [font-style:var(--sm-regular-font-style)]"
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+        <button
+          style={{
+            padding: "8px 16px",
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 500,
+            fontSize: "16px",
+            lineHeight: "22px",
+            letterSpacing: "0.08px",
+            color: "#FAFAFF",
+            opacity: 0.8,
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            transition: "color 0.2s",
+          }}
+          className="hover:text-[#6852D6] focus:text-[#6852D6]"
         >
           Log in
-        </Button>
+        </button>
 
-        <Button className="relative px-3 py-2 bg-branddark-09 rounded-[10px] overflow-hidden font-sm-regular font-[number:var(--sm-regular-font-weight)] text-branddark-12 text-[length:var(--sm-regular-font-size)] tracking-[var(--sm-regular-letter-spacing)] leading-[var(--sm-regular-line-height)] whitespace-nowrap [font-style:var(--sm-regular-font-style)]">
-          <div className="w-8 h-8 -top-3.5 left-[43px] rounded-2xl rotate-[145.28deg] blur-[15px] absolute bg-brand-06 opacity-80" />
-          Schedule a demo
-        </Button>
+        <button
+          style={{
+            position: "relative",
+            padding: "8px 20px",
+            background: "#6852D6",
+            borderRadius: "12px",
+            fontFamily: "Inter, sans-serif",
+            fontWeight: 600,
+            fontSize: "16px",
+            lineHeight: "22px",
+            letterSpacing: "0.08px",
+            color: "#FAFAFF",
+            boxShadow: "0 4px 24px 0 rgba(104,82,214,0.10)",
+            overflow: "hidden",
+            transition: "background 0.2s",
+            border: "none",
+          }}
+          className="hover:bg-[#45368D] focus:bg-[#45368D]"
+        >
+          <span
+            style={{
+              position: "absolute",
+              width: "32px",
+              height: "32px",
+              top: "-14px",
+              left: "43px",
+              borderRadius: "20px",
+              filter: "blur(15px)",
+              background: "#D8D2F4",
+              opacity: 0.8,
+              zIndex: 0,
+            }}
+          />
+          <span style={{ position: "relative", zIndex: 1 }}>Schedule a demo</span>
+        </button>
+      </div>
+
+      {/* Mobile menu icon */}
+      <div className="md:hidden flex items-center">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="6" width="28" height="2" rx="1" fill="#FAFAFF" />
+          <rect y="13" width="28" height="2" rx="1" fill="#FAFAFF" />
+          <rect y="20" width="28" height="2" rx="1" fill="#FAFAFF" />
+        </svg>
       </div>
     </header>
   );

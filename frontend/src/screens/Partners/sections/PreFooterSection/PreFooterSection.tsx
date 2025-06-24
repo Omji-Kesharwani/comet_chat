@@ -1,85 +1,181 @@
 import React from "react";
-import { Button } from "../../../../components/ui/button";
 
 export const PreFooterSection = (): JSX.Element => {
-  // Images data for better organization
   const images = {
     stars1: "https://c.animaapp.com/mc99rq32MYYUAu/img/stars-1.png",
     stars2: "https://c.animaapp.com/mc99rq32MYYUAu/img/stars-2.png",
     illustration: "https://c.animaapp.com/mc99rq32MYYUAu/img/illustration.png",
     group: "https://c.animaapp.com/mc99rq32MYYUAu/img/group-1.png",
-    blurLayer:
-      "https://c.animaapp.com/mc99rq32MYYUAu/img/blur-layer---heavy.png",
+    blurLayer: "https://c.animaapp.com/mc99rq32MYYUAu/img/blur-layer---heavy.png",
     comets: "https://c.animaapp.com/mc99rq32MYYUAu/img/comets-2.svg",
   };
 
   return (
-    <section className="relative w-full h-[480px] bg-grayscaledark-01 overflow-hidden">
-      <div className="relative w-full h-full">
-        {/* Background images */}
-        <img
-          className="absolute w-full h-auto min-w-[1389px] top-[-240px] left-0"
-          alt="Stars"
-          src={images.stars1}
-        />
-
-        <img
-          className="absolute w-full h-auto min-w-[2591px] top-[-10px] left-0"
-          alt="Illustration"
-          src={images.illustration}
-        />
-
-        <img
-          className="absolute w-full h-auto min-w-[1389px] top-[-68px] left-0"
-          alt="Stars"
-          src={images.stars2}
-        />
-
-        <img
-          className="absolute w-[476px] h-[476px] top-[-159px] left-[-213px]"
-          alt="Group"
-          src={images.group}
-        />
-
-        <img
-          className="absolute w-[223px] h-[215px] top-[112px] left-[20px] bg-blend-multiply"
-          alt="Blur layer heavy"
-          src={images.blurLayer}
-        />
-
-        <img
-          className="absolute w-[140px] h-[140px] top-[296px] right-[40px]"
-          alt="Comets"
-          src={images.comets}
-        />
-
-        {/* Content */}
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <div className="flex flex-col items-center gap-8 max-w-[640px] w-full">
-            <div className="flex flex-col items-center gap-4 w-full">
-              <h2 className="text-grayscaledark-12 font-3xl-dark-max text-[48px] font-medium leading-[105.99999237060547%] tracking-[0px] text-center">
-                Get started for free
-              </h2>
-
-              <p className="text-grayscaledark-12 font-xl-body-max text-[22px] font-medium leading-[120.00000762939453%] tracking-[0.11px] text-center opacity-[0.74] max-w-[480px]">
-                Build and test for as long as you need. <br />
-                Pick a plan when you&apos;re ready.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Button
-                variant="outline"
-                className="text-grayscaledark-12 bg-[#f9f9ff05] border-[#f9f9ff1a] rounded-xl font-sm-regular text-[14px] font-medium tracking-[0.2800000000000001px] leading-[140%]"
-              >
-                Start free trial
-              </Button>
-
-              <Button className="bg-brand-09 text-brand-01 rounded-xl font-sm-regular text-[14px] font-medium tracking-[0.2800000000000001px] leading-[140%] relative overflow-hidden">
-                <div className="w-10 h-10 absolute top-[-15px] left-[41px] rounded-[20px] blur-[20px] bg-brand-06 opacity-80" />
-                <span className="relative z-10">Schedule a demo</span>
-              </Button>
-            </div>
+    <section
+      style={{
+        position: "relative",
+        width: "100%",
+        height: 480,
+        background: "#18162B",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background images */}
+      <img
+        style={{
+          position: "absolute",
+          width: "100%",
+          minWidth: 1389,
+          top: -240,
+          left: 0,
+        }}
+        alt="Stars"
+        src={images.stars1}
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: "100%",
+          minWidth: 2591,
+          top: -10,
+          left: 0,
+        }}
+        alt="Illustration"
+        src={images.illustration}
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: "100%",
+          minWidth: 1389,
+          top: -68,
+          left: 0,
+        }}
+        alt="Stars"
+        src={images.stars2}
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: 476,
+          height: 476,
+          top: -159,
+          left: -213,
+        }}
+        alt="Group"
+        src={images.group}
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: 223,
+          height: 215,
+          top: 112,
+          left: 20,
+          backgroundBlendMode: "multiply",
+        }}
+        alt="Blur layer heavy"
+        src={images.blurLayer}
+      />
+      <img
+        style={{
+          position: "absolute",
+          width: 140,
+          height: 140,
+          top: 296,
+          right: 40,
+        }}
+        alt="Comets"
+        src={images.comets}
+      />
+      {/* Content */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "0 16px",
+        }}
+      >
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 32, maxWidth: 640, width: "100%" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, width: "100%" }}>
+            <h2
+              style={{
+                color: "#FAFAFF",
+                fontFamily: "Satoshi Variable, Helvetica, sans-serif",
+                fontWeight: 500,
+                fontSize: 48,
+                textAlign: "center",
+                margin: 0,
+              }}
+            >
+              Get started for free
+            </h2>
+            <p
+              style={{
+                color: "#FAFAFF",
+                fontFamily: "Satoshi Variable, Helvetica, sans-serif",
+                fontWeight: 500,
+                fontSize: 22,
+                textAlign: "center",
+                opacity: 0.74,
+                maxWidth: 480,
+                margin: 0,
+              }}
+            >
+              Build and test for as long as you need. <br />
+              Pick a plan when you&apos;re ready.
+            </p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <button
+              style={{
+                color: "#FAFAFF",
+                background: "rgba(249,249,255,0.02)",
+                border: "1px solid #f9f9ff1a",
+                borderRadius: 12,
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 500,
+                fontSize: 14,
+                padding: "12px 24px",
+                cursor: "pointer",
+                marginRight: 8,
+              }}
+            >
+              Start free trial
+            </button>
+            <button
+              style={{
+                background: "#6852D6",
+                color: "#FCFCFE",
+                borderRadius: 12,
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 500,
+                fontSize: 14,
+                padding: "12px 24px",
+                position: "relative",
+                overflow: "hidden",
+                cursor: "pointer",
+              }}
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  width: 40,
+                  height: 40,
+                  top: -15,
+                  left: 41,
+                  borderRadius: 20,
+                  filter: "blur(20px)",
+                  background: "#D8D2F4",
+                  opacity: 0.8,
+                  zIndex: 0,
+                }}
+              />
+              <span style={{ position: "relative", zIndex: 1 }}>Schedule a demo</span>
+            </button>
           </div>
         </div>
       </div>

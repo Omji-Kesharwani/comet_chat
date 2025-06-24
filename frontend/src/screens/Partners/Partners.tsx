@@ -119,31 +119,34 @@ export const Partners = (): JSX.Element => {
         </div>
 
         {/* Partners Logo Showcase */}
-        <div className="flex flex-col items-center justify-center w-full max-w-[1440px] min-h-[176px] border-b border-[#E4E4ED] pt-16 pb-20 gap-8 bg-grayscaledark-01 mx-auto">
-          <div className="flex flex-row items-center justify-center w-full max-w-[1440px] min-h-[32px] gap-16 opacity-[0.54] px-4">
-            {partnerLogos.map((logo, index) =>
-              logo.type === "complex" ? (
-                <div key={`complex-logo-${index}`} className={logo.className}>
-                  {logo.content.map((item, itemIndex) => (
-                    <img
-                      key={`complex-logo-item-${index}-${itemIndex}`}
-                      className={item.className}
-                      alt={item.alt}
-                      src={item.src}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <img
-                  key={`logo-${index}`}
-                  className={`relative ${logo.width} ${logo.height} ${logo.className}`}
-                  alt={logo.alt}
-                  src={logo.src}
-                />
-              ),
-            )}
-          </div>
+        {/* Partners Logo Showcase */}
+<div className="w-full bg-[#0A0914] py-10 flex items-center justify-center border-b border-[#E4E4ED]">
+  <div className="flex flex-row flex-wrap items-center justify-center w-full max-w-[1200px] gap-12 md:gap-20 opacity-80 px-4">
+    {partnerLogos.map((logo, index) =>
+      logo.type === "complex" ? (
+        <div key={`complex-logo-${index}`} className={logo.className}>
+          {logo.content.map((item, itemIndex) => (
+            <img
+              key={`complex-logo-item-${index}-${itemIndex}`}
+              className={item.className + " object-contain"}
+              alt={item.alt}
+              src={item.src}
+              style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+            />
+          ))}
         </div>
+      ) : (
+        <img
+          key={`logo-${index}`}
+          className={`relative ${logo.width} ${logo.height} ${logo.className} object-contain`}
+          alt={logo.alt}
+          src={logo.src}
+          style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }}
+        />
+      )
+    )}
+  </div>
+</div>
 
         {/* Main Content Sections */}
         <TitleBlockSection />
