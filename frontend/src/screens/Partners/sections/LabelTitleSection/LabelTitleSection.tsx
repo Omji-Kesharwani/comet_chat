@@ -1,14 +1,38 @@
-
+import React from "react";
 
 export const LabelTitleSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-start gap-2.5 py-16 px-16">
-      <div className="flex flex-col max-w-[528px] items-start gap-3">
-        <h3 className="font-xl-heding-light-max font-[number:var(--xl-heding-light-max-font-weight)] text-brand-09 text-[length:var(--xl-heding-light-max-font-size)] tracking-[var(--xl-heding-light-max-letter-spacing)] leading-[var(--xl-heding-light-max-line-height)] [font-style:var(--xl-heding-light-max-font-style)]">
+    <section
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        alignItems: "flex-start",
+        gap: "10px",
+        padding: "64px",
+      }}
+    >
+      <div style={{ maxWidth: 528, display: "flex", flexDirection: "column", gap: "12px" }}>
+        <h3
+          style={{
+            fontFamily: "Satoshi Variable, Helvetica, sans-serif",
+            fontWeight: 400,
+            fontSize: 22,
+            color: "#6852D6",
+            margin: 0,
+          }}
+        >
           Our programs
         </h3>
-
-        <h2 className="max-w-[528px] font-3xl-light-max font-[number:var(--3xl-light-max-font-weight)] text-grayscale-12 text-[length:var(--3xl-light-max-font-size)] tracking-[var(--3xl-light-max-letter-spacing)] leading-[var(--3xl-light-max-line-height)] [font-style:var(--3xl-light-max-font-style)]">
+        <h2
+          style={{
+            fontFamily: "Satoshi Variable, Helvetica, sans-serif",
+            fontWeight: 400,
+            fontSize: 48,
+            color: "#14131D",
+            margin: 0,
+          }}
+        >
           Types of partnerships programs
         </h2>
       </div>
